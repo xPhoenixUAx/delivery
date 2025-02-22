@@ -1,0 +1,114 @@
+.tracking {
+  background-color: #f8f9fa;
+  padding: 5rem 0;
+  font-family: "Arial", sans-serif;
+}
+
+.tracking-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.tracking-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.tracking-subtitle {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.tracking-form {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+#tracking-number {
+  flex-grow: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+}
+
+.btn-track {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-track:hover {
+  background-color: #003d82;
+}
+
+.tracking-result {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: none;
+}
+
+.tracking-result h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.status-timeline {
+  margin-bottom: 2rem;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.timeline-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #0056b3;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.timeline-content {
+  flex-grow: 1;
+}
+
+.timeline-date {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.timeline-status {
+  font-weight: bold;
+  color: #333;
+}
+
+.shipment-details {
+  background-color: #f1f3f5;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.shipment-details p {
+  margin-bottom: 0.5rem;
+}
+
+.shipment-details strong {
+  font-weight: bold;
+  color: #333;
+}
