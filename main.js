@@ -1,6 +1,5 @@
 import { initHeader } from "./js/header.js";
 import { initHero } from "./js/hero.js";
-import { initServices } from "./js/services.js";
 import { initCatalog } from "./js/catalog.js";
 import { initTracking } from "./js/tracking.js";
 import { initializeContactForm } from "./js/contact.js";
@@ -18,6 +17,5 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeContactForm();
     initFooter();
     initCookieConsent();
-    // initServices();
   }, 200); // Затримка на 200мс для гарантії завантаження HTML
 });
