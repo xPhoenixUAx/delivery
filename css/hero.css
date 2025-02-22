@@ -5,6 +5,9 @@
   align-items: center;
   overflow: hidden;
   background-color: #f0f4f8;
+  width: 100%;
+  box-sizing: border-box;
+  /* background: url("../img/MyCollages\ \(1\).jpg"); */
 }
 
 .hero-content {
@@ -179,5 +182,24 @@
 
   .floating-element {
     display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    overflow-x: hidden;
+  }
+  .hero {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .hero-content {
+    padding: 0 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
   }
 }

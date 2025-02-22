@@ -7,16 +7,32 @@
 @import url("./css/services.css");
 @import url("./css/contact.css");
 @import url("./css/footer.css");
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #818cf8;
+  --tertiary-color: #c7d2fe;
+  --text-color: #333;
+  --background-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
+
 #cookieConsent {
-  display: none; /* Відразу приховуємо вікно */
+  display: none;
 }
 
 .cookie-consent {
