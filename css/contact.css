@@ -1,130 +1,108 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
-
-.contact {
-  background: linear-gradient(135deg, #f6f9fc 0%, #e9f2f9 100%);
-  padding: 80px 20px;
+/* Стилі для секції контактів */
+#contact {
+  padding: 4rem 0;
+  background-color: #f7fafc;
 }
 
-.contact-container {
-  max-width: 800px;
+/* Стилі для контейнера форми */
+#contactForm {
+  max-width: 500px;
   margin: 0 auto;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 40px;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.contact-title {
+/* Стилі для заголовка */
+#contact h2 {
+  font-size: 2rem;
+  font-weight: bold;
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #333;
-  position: relative;
+  margin-bottom: 2rem;
+  color: #2d3748;
 }
 
-.contact-title::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 3px;
-  background: linear-gradient(90deg, #ff6b6b, #feca57);
-}
-
-.contact-form {
-  display: grid;
-  gap: 20px;
-}
-
+/* Стилі для групи форми */
 .form-group {
   position: relative;
+  margin-bottom: 1.25rem;
 }
 
 .form-group input,
 .form-group textarea,
-.custom-select select {
+.form-group select {
   width: 100%;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-size: 16px;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
-.custom-select select:focus {
-  border-color: #ff6b6b;
-  box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
+.form-group select:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
 }
 
-.form-group label {
+.form-label {
   position: absolute;
-  left: 15px;
-  top: 15px;
-  color: #999;
+  left: 0.75rem;
+  top: 0.625rem;
+  color: #a0aec0;
   transition: all 0.3s ease;
   pointer-events: none;
+  font-size: 0.875rem;
 }
 
-.form-group input:focus ~ label,
-.form-group textarea:focus ~ label,
-.form-group input:valid ~ label,
-.form-group textarea:valid ~ label {
-  top: -10px;
-  left: 10px;
-  font-size: 12px;
-  background: #fff;
-  padding: 0 5px;
-  color: #ff6b6b;
+.form-group.focused .form-label,
+.form-group input:not(:placeholder-shown) + .form-label,
+.form-group textarea:not(:placeholder-shown) + .form-label {
+  top: -0.5rem;
+  left: 0.5rem;
+  font-size: 0.75rem;
+  color: #4299e1;
+  background-color: white;
+  padding: 0 0.25rem;
 }
 
-.custom-select {
-  position: relative;
-}
-
-.custom-select::after {
-  content: "";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #999;
-  pointer-events: none;
-}
-
-.submit-btn {
-  background: linear-gradient(90deg, #ff6b6b, #feca57);
-  color: #fff;
+/* Стилі для кнопки відправки */
+button[type="submit"] {
+  width: 100%;
+  background-color: #4299e1;
+  color: white;
+  padding: 0.75rem;
   border: none;
-  padding: 15px 30px;
-  font-size: 18px;
-  border-radius: 30px;
+  border-radius: 0.25rem;
+  font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  transition: background-color 0.3s ease;
 }
 
-.submit-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+button[type="submit"]:hover {
+  background-color: #3182ce;
 }
 
-.submit-btn i {
-  transition: all 0.3s ease;
+/* Стилі для селекта */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23a0aec0'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
 }
 
-.submit-btn:hover i {
-  transform: translateX(5px);
+select:invalid {
+  color: #a0aec0;
 }
 
+/* Стилі для модального вікна залишаються без змін */
+
+/* Стилі для модального вікна */
 .modal {
   display: none;
   position: fixed;
@@ -139,12 +117,13 @@
 .modal-content {
   background-color: #fff;
   margin: 15% auto;
-  padding: 40px;
-  border-radius: 20px;
+  padding: 2rem;
+  border-radius: 0.5rem;
   max-width: 400px;
   text-align: center;
   position: relative;
   animation: modalFadeIn 0.5s;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes modalFadeIn {
@@ -160,37 +139,61 @@
 
 .close {
   position: absolute;
-  right: 20px;
-  top: 10px;
-  font-size: 28px;
+  right: 1.25rem;
+  top: 0.75rem;
+  font-size: 1.75rem;
   cursor: pointer;
+  color: #718096;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #2d3748;
 }
 
 .modal-content i {
-  font-size: 50px;
-  color: #4caf50;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  color: #4299e1;
+  margin-bottom: 1rem;
 }
 
 .modal-content h3 {
-  margin-bottom: 10px;
-  color: #333;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+  font-size: 1.5rem;
 }
 
 .modal-content p {
-  color: #666;
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-  .contact-container {
-    padding: 20px;
-  }
+/* Стилі для кнопки відправки */
+button[type="submit"] {
+  background-color: #4299e1;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  .contact-title {
-    font-size: 2rem;
-  }
+button[type="submit"]:hover {
+  background-color: #3182ce;
+}
 
-  .submit-btn {
-    width: 100%;
-  }
+/* Стилі для селекта */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23a0aec0'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+}
+
+select:invalid {
+  color: #a0aec0;
 }

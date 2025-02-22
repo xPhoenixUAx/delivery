@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadPartial("services", "./partials/services.html");
   loadPartial("catalog", "./partials/catalog.html");
   loadPartial("tracking", "./partials/tracking.html");
+  loadPartial("locations", "./partials/locations.html");
   loadPartial("about", "./partials/about.html"); // Завантаження about.html (за потребою)
   loadPartial("contact", "./partials/contact.html");
   loadPartial("footer", "./partials/footer.html"); // Завантаження footer.html (за потребою)

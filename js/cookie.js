@@ -3,42 +3,28 @@ export function initCookieConsent() {
   const acceptBtn = document.getElementById("acceptCookies");
   const declineBtn = document.getElementById("declineCookies");
 
-  function showCookieConsent() {
+  // Ховаємо вікно одразу перед перевіркою (щоб уникнути мерехтіння)
+  cookieConsent.style.display = "none";
+
+  // Перевіряємо, чи користувач уже прийняв cookies
+  if (localStorage.getItem("cookieConsent") === "accepted") {
+    return; // Якщо cookies прийняті, вікно не з'являється
+  }
+
+  // Якщо згода не була прийнята, показуємо вікно після затримки
+  setTimeout(() => {
     cookieConsent.style.display = "block";
-  }
-
-  function hideCookieConsent() {
-    cookieConsent.style.display = "none";
-  }
-
-  // Check if user has already made a choice
-  const cookieChoice = localStorage.getItem("cookieConsent");
-
-  if (!cookieChoice || cookieChoice === "declined") {
-    // Show the cookie consent modal after a short delay
-    setTimeout(showCookieConsent, 1000);
-  }
+  }, 1000);
 
   acceptBtn.addEventListener("click", () => {
     localStorage.setItem("cookieConsent", "accepted");
-    hideCookieConsent();
-    // Here you can add code to enable cookies or tracking
+    cookieConsent.style.display = "none";
     console.log("Cookies accepted");
   });
 
   declineBtn.addEventListener("click", () => {
-    // When declined, we set the choice but don't store it permanently
-    sessionStorage.setItem("cookieConsent", "declined");
-    hideCookieConsent();
-    // Here you can add code to disable cookies or tracking
+    localStorage.removeItem("cookieConsent"); // Видаляємо запис про згоду
+    cookieConsent.style.display = "none";
     console.log("Cookies declined");
-  });
-
-  // Check session storage on page load
-  window.addEventListener("load", () => {
-    const sessionChoice = sessionStorage.getItem("cookieConsent");
-    if (sessionChoice === "declined") {
-      showCookieConsent();
-    }
   });
 }

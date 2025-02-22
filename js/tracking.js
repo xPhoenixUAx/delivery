@@ -1,75 +1,57 @@
 export function initTracking() {
   const trackingForm = document.getElementById("tracking-form");
-  const trackingResult = document.getElementById("tracking-result");
-  const statusTimeline = document.getElementById("status-timeline");
-  const shipmentDetails = document.getElementById("shipment-details");
+  let alertTimeout;
 
   trackingForm.addEventListener("submit", function (e) {
     e.preventDefault();
     const trackingNumber = document.getElementById("tracking-number").value;
 
-    // Simulate API call with mock data
-    const shipmentData = getMockShipmentData(trackingNumber);
+    // Show custom styled alert
+    showCustomAlert(
+      `Tracking ID ${trackingNumber} received. Our manager will contact you shortly with the information.`
+    );
 
-    displayTrackingResult(shipmentData);
+    // Clear the input field after showing the alert
+    document.getElementById("tracking-number").value = "";
   });
 
-  function displayTrackingResult(data) {
-    statusTimeline.innerHTML = "";
-    shipmentDetails.innerHTML = "";
+  function showCustomAlert(message) {
+    // Clear any existing timeout to prevent multiple alerts
+    if (alertTimeout) {
+      clearTimeout(alertTimeout);
+    }
 
-    data.statusUpdates.forEach((update) => {
-      const timelineItem = document.createElement("div");
-      timelineItem.classList.add("timeline-item");
-      timelineItem.innerHTML = `
-                <div class="timeline-icon"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">${update.date}</div>
-                    <div class="timeline-status">${update.status}</div>
-                    <div>${update.location}</div>
-                </div>
-            `;
-      statusTimeline.appendChild(timelineItem);
-    });
+    // Create alert element if it doesn't exist
+    let alertElement = document.getElementById("custom-alert");
+    if (!alertElement) {
+      alertElement = document.createElement("div");
+      alertElement.id = "custom-alert";
+      document.body.appendChild(alertElement);
+    }
 
-    shipmentDetails.innerHTML = `
-            <p><strong>Tracking Number:</strong> ${data.trackingNumber}</p>
-            <p><strong>Service Type:</strong> ${data.serviceType}</p>
-            <p><strong>Estimated Delivery:</strong> ${data.estimatedDelivery}</p>
-            <p><strong>Sender:</strong> ${data.sender}</p>
-            <p><strong>Recipient:</strong> ${data.recipient}</p>
-        `;
+    // Set alert style
+    alertElement.style.position = "fixed";
+    alertElement.style.top = "20px";
+    alertElement.style.left = "50%";
+    alertElement.style.transform = "translateX(-50%)";
+    alertElement.style.backgroundColor = "#4CAF50";
+    alertElement.style.color = "white";
+    alertElement.style.padding = "15px";
+    alertElement.style.borderRadius = "5px";
+    alertElement.style.boxShadow = "0 2px 10px rgba(0,0,0,0.2)";
+    alertElement.style.zIndex = "1000";
+    alertElement.style.textAlign = "center";
+    alertElement.style.maxWidth = "80%";
 
-    trackingResult.style.display = "block";
-  }
+    // Set alert content
+    alertElement.textContent = message;
 
-  function getMockShipmentData(trackingNumber) {
-    // This is a mock function to simulate getting data from an API
-    return {
-      trackingNumber: trackingNumber,
-      serviceType: "Express Delivery",
-      estimatedDelivery: "June 15, 2023",
-      sender: "John Doe, New York",
-      recipient: "Jane Smith, Los Angeles",
-      statusUpdates: [
-        {
-          date: "June 12, 2023 09:00 AM",
-          status: "Package picked up",
-          location: "New York Sorting Facility",
-        },
-        {
-          date: "June 13, 2023 02:30 PM",
-          status: "In transit",
-          location: "Chicago Distribution Center",
-        },
-        {
-          date: "June 14, 2023 11:00 AM",
-          status: "Out for delivery",
-          location: "Los Angeles Local Courier",
-        },
-      ],
-    };
+    // Show the alert
+    alertElement.style.display = "block";
+
+    // Hide the alert after 5 seconds
+    alertTimeout = setTimeout(() => {
+      alertElement.style.display = "none";
+    }, 5000);
   }
 }
-
-// Initialize tracking functionality when the DOM is fully loaded

@@ -1,32 +1,30 @@
-// Функція для плавного прокручування для посилань в футері
-export function smoothScrollFooterLinks() {
-  const footerLinks = document.querySelectorAll(
-    ".footer-links a, .footer-legal a"
-  );
+export function initFooter() {
+  // Set current year in footer
+  const currentYearElement = document.getElementById("current-year");
+  if (currentYearElement) {
+    currentYearElement.textContent = new Date().getFullYear();
+  }
+
+  // Add event listeners for footer links
+  const footerLinks = document.querySelectorAll(".footer-link");
   footerLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
-      const href = link.getAttribute("href");
-      if (href.startsWith("#")) {
+      if (link.getAttribute("href").startsWith("#")) {
         e.preventDefault();
-        const targetId = href.substring(1);
+        const targetId = link.getAttribute("href").slice(1);
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
-          targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+          targetElement.scrollIntoView({ behavior: "smooth" });
         }
       }
+      // You can add more custom behavior here, like analytics tracking
+      console.log(`Clicked on: ${link.textContent}`);
     });
   });
+
+  // You can add more footer-specific functionality here
 }
 
-// Функція для паралакс ефекту на футері
-export function parallaxFooterWave() {
-  window.addEventListener("DOMContentLoaded", () => {
-    window.addEventListener("scroll", () => {
-      const scrollPosition = window.pageYOffset;
-      const footerWave = document.querySelector(".footer-wave");
-      if (footerWave) {
-        footerWave.style.transform = `translateY(${scrollPosition * 0.1}px)`;
-      }
-    });
-  });
-}
+// Example of how to use this module:
+// import { initFooter } from './footer.js';
+// document.addEventListener('DOMContentLoaded', initFooter);
