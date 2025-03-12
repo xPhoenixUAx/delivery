@@ -183,7 +183,9 @@
   .catalog-grid {
     grid-template-columns: 1fr; /* Одна колонка для мобільних */
   }
-
+  .catalog-filter {
+    flex-direction: column;
+  }
   .catalog-title {
     font-size: 1.8rem;
   }

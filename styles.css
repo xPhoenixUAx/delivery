@@ -57,7 +57,7 @@ html {
 }
 
 .cookie-content {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   text-align: center;
 }
@@ -112,4 +112,14 @@ html {
 
 .privacy-link:hover {
   color: #ffffff;
+}
+@media (max-width: 767px) {
+  .cookie-consent {
+    padding: 0.5rem; /* Мінімальні відступи */
+  }
+
+  .cookie-content {
+    margin: 0 0.5rem; /* Відступи для мобільних */
+    font-size: 0.8rem; /* Зменшити шрифт */
+  }
 }

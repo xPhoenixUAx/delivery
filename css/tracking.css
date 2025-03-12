@@ -34,10 +34,10 @@
   color: #666;
 }
 
-.tracking-form {
+/* .tracking-form {
   display: flex;
   margin-bottom: 2rem;
-}
+} */
 
 #tracking-number {
   flex-grow: 1;
@@ -56,8 +56,11 @@
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%;
 }
-
+.input {
+  width: 100%;
+}
 .btn-track:hover {
   background-color: #003d82;
 }
@@ -224,6 +227,7 @@
     padding: 4rem;
     background-position: top; /* Можна залишити фонову картинку зверху */
     background-size: auto 100%; /* Масштабування фону для маленьких екранів */
+    margin-top: -2px;
   }
 
   .tracking-container {

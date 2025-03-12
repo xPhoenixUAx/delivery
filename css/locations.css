@@ -157,7 +157,9 @@
   .locations-container {
     padding: 1rem;
   }
-
+  .locations {
+    margin-top: -3px;
+  }
   .locations-title {
     font-size: 1.8rem;
   }
