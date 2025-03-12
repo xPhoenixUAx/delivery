@@ -1,5 +1,8 @@
 .locations {
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
+  background: url("../img/2302.i121.021.S.m005.c13.isometric\ export\ import\ illustration.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 5rem 0;
   font-family: Arial, sans-serif;
 }
@@ -7,7 +10,8 @@
 .locations-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 2rem 1rem;
+  box-shadow: 0px 0px 5px 0px;
 }
 
 .locations-title {
@@ -36,7 +40,7 @@
 }
 
 .location-item {
-  background-color: #fff;
+  background-color: aliceblue;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
@@ -79,6 +83,9 @@
   text-align: center;
   max-width: 600px;
   margin: 0 auto;
+  background-color: aliceblue;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .locations-info h3 {
