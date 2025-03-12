@@ -1,5 +1,5 @@
 .catalog {
-  background-color: #f8f9fa;
+  background: linear-gradient(0deg, #d8e0e9 0%, #e9f1f9 100%);
   padding: 5rem 0;
   font-family: "Arial", sans-serif;
 }

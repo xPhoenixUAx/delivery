@@ -1,6 +1,6 @@
 .tracking {
   background-color: #f8f9fa;
-  padding: 5rem 0;
+  padding: 15rem;
   font-family: "Arial", sans-serif;
   background: linear-gradient(
       0deg,
@@ -121,4 +121,34 @@
 .shipment-details strong {
   font-weight: bold;
   color: #333;
+}
+@media (max-width: 1200px) {
+  .tracking {
+    padding: 10rem; /* Менші відступи на великих екранах */
+  }
+}
+
+/* Для екранів менше 992px */
+@media (max-width: 992px) {
+  .tracking {
+    padding: 8rem; /* Додаткове зменшення відступів */
+    background-position: center; /* Зміна позиції фону */
+  }
+}
+
+/* Для екранів менше 768px */
+@media (max-width: 768px) {
+  .tracking {
+    padding: 6rem; /* Зменшуємо відступи для мобільних */
+    background-position: top; /* Зміна позиції фону на мобільних */
+  }
+}
+
+/* Для екранів менше 480px */
+@media (max-width: 480px) {
+  .tracking {
+    padding: 4rem; /* Меньші відступи для дуже маленьких екранів */
+    background-position: top; /* Можна залишити фонову картинку зверху */
+    background-size: auto 100%; /* Масштабування фону для маленьких екранів */
+  }
 }
