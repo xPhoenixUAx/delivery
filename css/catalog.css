@@ -115,3 +115,96 @@
 .btn-details:hover {
   background-color: #003d82;
 }
+
+/* Десктоп */
+@media (min-width: 1024px) {
+  .catalog-grid {
+    grid-template-columns: repeat(3, 1fr); /* Три колонки для десктопа */
+  }
+
+  .catalog-title {
+    font-size: 2.5rem;
+  }
+
+  .catalog-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .catalog-item {
+    padding: 2rem;
+  }
+
+  .catalog-item h3 {
+    font-size: 1.6rem;
+  }
+
+  .catalog-item p {
+    font-size: 1.1rem;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+}
+
+/* Планшет */
+@media (max-width: 1023px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr); /* Дві колонки для планшетів */
+  }
+
+  .catalog-title {
+    font-size: 2.2rem;
+  }
+
+  .catalog-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .catalog-item {
+    padding: 1.8rem;
+  }
+
+  .catalog-item h3 {
+    font-size: 1.5rem;
+  }
+
+  .catalog-item p {
+    font-size: 1.1rem;
+  }
+
+  .price {
+    font-size: 1.4rem;
+  }
+}
+
+/* Мобільний */
+@media (max-width: 768px) {
+  .catalog-grid {
+    grid-template-columns: 1fr; /* Одна колонка для мобільних */
+  }
+
+  .catalog-title {
+    font-size: 1.8rem;
+  }
+
+  .catalog-subtitle {
+    font-size: 1rem;
+  }
+
+  .catalog-item {
+    padding: 1.5rem;
+  }
+
+  .catalog-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .catalog-item p {
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 1.25rem;
+  }
+}

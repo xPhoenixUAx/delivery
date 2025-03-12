@@ -119,6 +119,15 @@
 }
 
 /* Адаптивність */
+
+/* Планшети: екрани від 768px до 1200px */
+@media (max-width: 1200px) {
+  .header-container {
+    padding: 1rem 2rem;
+  }
+}
+
+/* Мобільні пристрої: екрани менше 768px */
 @media (max-width: 768px) {
   .nav-menu {
     position: absolute;

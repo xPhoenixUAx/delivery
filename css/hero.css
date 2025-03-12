@@ -27,7 +27,6 @@
   align-items: center;
   background: var(--dark);
   padding: 3rem 5%;
-  /* Removed overflow: hidden */
 }
 
 .hero-content {
@@ -138,7 +137,6 @@
   width: 55%;
   height: 100%;
   z-index: 1;
-  /* Added pointer-events: none to prevent interaction issues */
   pointer-events: none;
 }
 
@@ -229,7 +227,6 @@
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   opacity: 0.05;
   animation: morphShape 15s ease-in-out infinite alternate;
-  /* Added pointer-events: none */
   pointer-events: none;
 }
 
@@ -304,10 +301,11 @@
 }
 
 /* Responsive styles */
-@media (max-width: 1200px) {
+@media (min-width: 1200px) {
   .hero {
     margin-top: 70px;
   }
+
   .hero-title {
     font-size: 3rem;
   }
@@ -324,7 +322,7 @@
 @media (max-width: 992px) {
   .hero {
     flex-direction: column;
-    padding-top: 4rem;
+    padding-top: 10rem;
     padding-bottom: 4rem;
   }
 

@@ -86,8 +86,28 @@
   background-image: url("path/to/warehouse-icon.svg");
 }
 
-@media (max-width: 768px) {
+/* Desktop */
+@media (min-width: 1200px) {
   .footer-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center; /* Four columns on large screens */
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on tablets */
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+
+  .footer-section h3 {
+    font-size: 1rem; /* Smaller font for mobile */
   }
 }

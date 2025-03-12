@@ -122,33 +122,131 @@
   font-weight: bold;
   color: #333;
 }
-@media (max-width: 1200px) {
+
+/* Десктоп */
+@media (min-width: 1024px) {
   .tracking {
-    padding: 10rem; /* Менші відступи на великих екранах */
+    padding: 15rem;
+  }
+
+  .tracking-container {
+    max-width: 800px;
+  }
+
+  .tracking-title {
+    font-size: 2.5rem;
+  }
+
+  .tracking-subtitle {
+    font-size: 1.1rem;
+  }
+
+  #tracking-number {
+    font-size: 1rem;
+  }
+
+  .btn-track {
+    font-size: 1rem;
+  }
+
+  .tracking-result h3 {
+    font-size: 1.5rem;
   }
 }
 
-/* Для екранів менше 992px */
-@media (max-width: 992px) {
+/* Планшет (макс. 992px) */
+@media (max-width: 1023px) {
   .tracking {
-    padding: 8rem; /* Додаткове зменшення відступів */
-    background-position: center; /* Зміна позиції фону */
+    padding: 8rem;
+    background-position: center; /* Зміна позиції фону для планшетів */
+  }
+
+  .tracking-container {
+    padding: 0 1.5rem;
+  }
+
+  .tracking-title {
+    font-size: 2.2rem;
+  }
+
+  .tracking-subtitle {
+    font-size: 1.1rem;
+  }
+
+  #tracking-number {
+    font-size: 0.95rem;
+  }
+
+  .btn-track {
+    font-size: 0.95rem;
+  }
+
+  .tracking-result h3 {
+    font-size: 1.4rem;
   }
 }
 
-/* Для екранів менше 768px */
+/* Мобільний (макс. 768px) */
 @media (max-width: 768px) {
   .tracking {
-    padding: 6rem; /* Зменшуємо відступи для мобільних */
-    background-position: top; /* Зміна позиції фону на мобільних */
+    padding: 6rem;
+    background-position: top; /* Зміна позиції фону для мобільних */
+  }
+
+  .tracking-container {
+    padding: 0 1rem;
+  }
+
+  .tracking-title {
+    font-size: 2rem;
+  }
+
+  .tracking-subtitle {
+    font-size: 1rem;
+  }
+
+  #tracking-number {
+    font-size: 1rem;
+  }
+
+  .btn-track {
+    font-size: 1rem;
+  }
+
+  .tracking-result h3 {
+    font-size: 1.3rem;
   }
 }
 
-/* Для екранів менше 480px */
+/* Дуже маленькі екрани (макс. 480px) */
 @media (max-width: 480px) {
   .tracking {
-    padding: 4rem; /* Меньші відступи для дуже маленьких екранів */
+    padding: 4rem;
     background-position: top; /* Можна залишити фонову картинку зверху */
     background-size: auto 100%; /* Масштабування фону для маленьких екранів */
+  }
+
+  .tracking-container {
+    padding: 0 1rem;
+  }
+
+  .tracking-title {
+    font-size: 1.8rem;
+  }
+
+  .tracking-subtitle {
+    font-size: 0.9rem;
+  }
+
+  #tracking-number {
+    font-size: 0.95rem;
+  }
+
+  .btn-track {
+    font-size: 0.95rem;
+  }
+
+  .tracking-result h3 {
+    font-size: 1.2rem;
   }
 }

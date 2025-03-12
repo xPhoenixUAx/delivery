@@ -1,5 +1,4 @@
 .locations {
-  /* background-color: #f8f9fa; */
   background: url("../img/2302.i121.021.S.m005.c13.isometric\ export\ import\ illustration.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -115,7 +114,35 @@
   background-color: #003d82;
 }
 
-@media (max-width: 768px) {
+/* Для екранів менше 1200px (планшет) */
+@media (max-width: 1200px) {
+  .locations-list {
+    gap: 1.5rem;
+  }
+
+  .location-item {
+    width: calc(50% - 1rem);
+  }
+
+  .locations-title {
+    font-size: 2.3rem;
+  }
+
+  .locations-subtitle {
+    font-size: 1.05rem;
+  }
+}
+
+/* Для екранів менше 992px (мобільний планшет) */
+@media (max-width: 992px) {
+  .locations-list {
+    gap: 1rem;
+  }
+
+  .location-item {
+    width: 100%;
+  }
+
   .locations-title {
     font-size: 2rem;
   }
@@ -123,8 +150,35 @@
   .locations-subtitle {
     font-size: 1rem;
   }
+}
+
+/* Для екранів менше 768px (мобільний) */
+@media (max-width: 768px) {
+  .locations-container {
+    padding: 1rem;
+  }
+
+  .locations-title {
+    font-size: 1.8rem;
+  }
+
+  .locations-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .locations-list {
+    margin-bottom: 2rem;
+  }
 
   .location-item {
     width: 100%;
+  }
+
+  .locations-info {
+    padding: 15px;
+  }
+
+  .btn-location-finder {
+    padding: 0.6rem 1.2rem;
   }
 }
