@@ -97,16 +97,11 @@ export const initHeader = () => {
     });
   }
 
-  // Add blur effect on scroll
+  // Remove scroll effect that hides header
   window.addEventListener("scroll", () => {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > 50) {
-      header.style.backdropFilter = "blur(10px)";
-      header.querySelector(".header-background").style.opacity = "1";
-    } else {
-      header.style.backdropFilter = "none";
-      header.querySelector(".header-background").style.opacity = "0.7";
-    }
+    header.style.transform = "translateY(0)";
+    header.style.backdropFilter = "none";
+    header.style.opacity = "1";
   });
 
   // Add hover effect for logo

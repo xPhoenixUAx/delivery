@@ -1,7 +1,51 @@
 /* Стилі для секції контактів */
 #contact {
   padding: 4rem 0;
+  position: relative;
   background-color: #f7fafc;
+  /* Додаємо тематичний фон для секції "Зв'яжіться з нами" */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='none'%3E%3Cpath d='M85 15H15C10.5817 15 7 18.5817 7 23V77C7 81.4183 10.5817 85 15 85H85C89.4183 85 93 81.4183 93 77V23C93 18.5817 89.4183 15 85 15Z' stroke='%234299e1' stroke-width='1.5' stroke-opacity='0.1'/%3E%3Cpath d='M93 23L54.2 54.8C51.4 57.2 48.6 57.2 45.8 54.8L7 23' stroke='%234299e1' stroke-width='1.5' stroke-opacity='0.1'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M20 10.999H22C22 5.869 18.127 2 12.99 2V4C17.052 4 20 6.943 20 10.999Z' fill='%234299e1' fill-opacity='0.07'/%3E%3Cpath d='M13 8C15.206 8 17 9.794 17 12H19C19 8.686 16.314 6 13 6V8Z' fill='%234299e1' fill-opacity='0.07'/%3E%3Cpath d='M13 4V2C7.872 2 4 5.869 4 10.999H6C6 6.943 8.948 4 13 4Z' fill='%234299e1' fill-opacity='0.07'/%3E%3Cpath d='M7 12H5C5 15.314 7.686 18 11 18V16C8.794 16 7 14.206 7 12Z' fill='%234299e1' fill-opacity='0.07'/%3E%3Cpath d='M12 15C13.654 15 15 13.654 15 12C15 10.346 13.654 9 12 9C10.346 9 9 10.346 9 12C9 13.654 10.346 15 12 15Z' fill='%234299e1' fill-opacity='0.07'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M8 10.5H4V13.5H8V10.5Z' fill='%234299e1' fill-opacity='0.05'/%3E%3Cpath d='M14 10.5H10V13.5H14V10.5Z' fill='%234299e1' fill-opacity='0.05'/%3E%3Cpath d='M20 10.5H16V13.5H20V10.5Z' fill='%234299e1' fill-opacity='0.05'/%3E%3Cpath d='M12 3C16.963 3 21 7.037 21 12C21 16.963 16.963 21 12 21' stroke='%234299e1' stroke-width='1.5' stroke-opacity='0.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12 21C7.037 21 3 16.963 3 12C3 7.037 7.037 3 12 3' stroke='%234299e1' stroke-width='1.5' stroke-opacity='0.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-position: 85% 20%, 15% 70%, 50% 50%;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: 100px, 60px, 80px;
+}
+
+/* Додаємо декоративні елементи з тематикою комунікації */
+#contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+      circle at 30% 30%,
+      rgba(66, 153, 225, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      rgba(49, 130, 206, 0.05) 0%,
+      transparent 50%
+    );
+  z-index: 0;
+}
+
+/* Додаємо патерн з'єднаних точок (символізує зв'язок) */
+#contact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%234299e1' fill-opacity='0.05'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-position: center;
+  background-size: 300px;
+  z-index: 0;
+  opacity: 0.5;
 }
 
 /* Стилі для контейнера форми */
@@ -11,7 +55,23 @@
   background-color: white;
   padding: 2rem;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Додаємо декоративний елемент до форми */
+#contactForm::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 50px;
+  height: 50px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L2.58151 19.8267C2.32295 20.793 3.20701 21.677 4.17335 21.4185L6.39939 20.8229C6.78393 20.72 7.19121 20.7791 7.54753 20.9565C8.88837 21.6244 10.4003 22 12 22Z' stroke='%234299e1' stroke-width='1.5'/%3E%3Cpath d='M8 10.5H16' stroke='%234299e1' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8 13.5H13' stroke='%234299e1' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  z-index: 3;
 }
 
 /* Стилі для заголовка */
@@ -21,6 +81,28 @@
   text-align: center;
   margin-bottom: 2rem;
   color: #2d3748;
+  position: relative;
+  z-index: 2;
+}
+
+#contact h2::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M8.5 19H8C4 19 2 18 2 13V8C2 4 4 2 8 2H16C20 2 22 4 22 8V13C22 17 20 19 16 19H15.5C15.19 19 14.89 19.15 14.7 19.4L13.2 21.4C12.54 22.28 11.46 22.28 10.8 21.4L9.3 19.4C9.14 19.18 8.77 19 8.5 19Z' stroke='%234299e1' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.9965 11H16.0054' stroke='%234299e1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.9955 11H12.0045' stroke='%234299e1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M7.99451 11H8.00349' stroke='%234299e1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  margin: 0 auto 1rem;
+}
+
+#contact h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #4299e1, #63b3ed);
+  margin: 0.5rem auto 0;
+  border-radius: 3px;
 }
 
 /* Стилі для групи форми */
@@ -73,18 +155,41 @@
 /* Стилі для кнопки відправки */
 button[type="submit"] {
   width: 100%;
-  background-color: #4299e1;
+  background: linear-gradient(135deg, #4299e1, #3182ce);
   color: white;
   padding: 0.75rem;
   border: none;
   border-radius: 0.25rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(66, 153, 225, 0.2);
+  position: relative;
+}
+
+button[type="submit"]::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9.00967 5.12761L11.0097 7.12761L21.0097 17.1276C21.5619 17.6798 21.5619 18.5794 21.0097 19.1316C20.4575 19.6838 19.5579 19.6838 19.0057 19.1316L9.00967 9.13161L7.00967 7.13161L3.51472 10.6266C3.18814 10.9532 2.6633 10.9532 2.33672 10.6266C2.01014 10.3001 2.01014 9.77522 2.33672 9.44864L5.83167 5.95369C6.50143 5.28393 7.64143 5.28393 8.31119 5.95369L9.00967 5.12761Z' fill='white'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #3182ce;
+  background: linear-gradient(135deg, #3182ce, #2c5282);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 8px rgba(66, 153, 225, 0.25);
+  padding-left: 2.5rem;
+}
+
+button[type="submit"]:hover::before {
+  opacity: 1;
 }
 
 /* Стилі для селекта */
@@ -99,8 +204,6 @@ select {
 select:invalid {
   color: #a0aec0;
 }
-
-/* Стилі для модального вікна залишаються без змін */
 
 /* Стилі для модального вікна */
 .modal {
@@ -169,31 +272,26 @@ select:invalid {
   line-height: 1.5;
 }
 
-/* Стилі для кнопки відправки */
-button[type="submit"] {
-  background-color: #4299e1;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+/* Медіа-запити для адаптивності */
+@media (max-width: 768px) {
+  #contactForm {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
 
-button[type="submit"]:hover {
-  background-color: #3182ce;
-}
+  #contact h2 {
+    font-size: 1.75rem;
+  }
 
-/* Стилі для селекта */
-select {
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23a0aec0'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.75rem center;
-  background-size: 1rem;
-}
+  #contactForm::before {
+    display: none;
+  }
 
-select:invalid {
-  color: #a0aec0;
+  button[type="submit"]:hover {
+    padding-left: 0.75rem;
+  }
+
+  button[type="submit"]::before {
+    display: none;
+  }
 }
