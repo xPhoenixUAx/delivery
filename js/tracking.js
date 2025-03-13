@@ -2,9 +2,42 @@ export function initTracking() {
   const trackingForm = document.getElementById("tracking-form");
   let alertTimeout;
 
+  // Add animation classes when page loads
+  document.addEventListener("DOMContentLoaded", function () {
+    const trackingForm = document.querySelector(".tracking-form");
+    const input = document.querySelector(".input");
+    const button = document.querySelector(".btn-track");
+
+    if (trackingForm) trackingForm.style.opacity = "0";
+    if (input) input.style.opacity = "0";
+    if (button) button.style.opacity = "0";
+
+    setTimeout(() => {
+      if (trackingForm) {
+        trackingForm.style.opacity = "1";
+        trackingForm.style.animation = "fadeInUp 0.8s ease forwards";
+      }
+      if (input) {
+        input.style.opacity = "1";
+        input.style.animation = "fadeInUp 1s ease forwards";
+      }
+      if (button) {
+        button.style.opacity = "1";
+        button.style.animation = "fadeInUp 1.2s ease forwards";
+      }
+    }, 300);
+  });
+
   trackingForm.addEventListener("submit", function (e) {
     e.preventDefault();
     const trackingNumber = document.getElementById("tracking-number").value;
+
+    // Add button press effect
+    const button = document.querySelector(".btn-track");
+    button.style.transform = "scale(0.98)";
+    setTimeout(() => {
+      button.style.transform = "";
+    }, 200);
 
     // Show custom styled alert
     showCustomAlert(
@@ -29,29 +62,50 @@ export function initTracking() {
       document.body.appendChild(alertElement);
     }
 
-    // Set alert style
-    alertElement.style.position = "fixed";
-    alertElement.style.top = "20px";
-    alertElement.style.left = "50%";
-    alertElement.style.transform = "translateX(-50%)";
-    alertElement.style.backgroundColor = "#4CAF50";
-    alertElement.style.color = "white";
-    alertElement.style.padding = "15px";
-    alertElement.style.borderRadius = "5px";
-    alertElement.style.boxShadow = "0 2px 10px rgba(0,0,0,0.2)";
-    alertElement.style.zIndex = "1000";
-    alertElement.style.textAlign = "center";
-    alertElement.style.maxWidth = "80%";
-
     // Set alert content
     alertElement.textContent = message;
 
-    // Show the alert
+    // Show the alert with animation
     alertElement.style.display = "block";
+    alertElement.style.animation =
+      "slideDown 0.5s forwards, fadeOut 0.5s forwards 4.5s";
 
-    // Hide the alert after 5 seconds
+    // Hide the alert after animation completes
     alertTimeout = setTimeout(() => {
       alertElement.style.display = "none";
+      alertElement.style.animation = "";
     }, 5000);
+  }
+
+  // Add ripple effect to button
+  const button = document.querySelector(".btn-track");
+  if (button) {
+    button.addEventListener("click", function (e) {
+      const x = e.clientX - e.target.getBoundingClientRect().left;
+      const y = e.clientY - e.target.getBoundingClientRect().top;
+
+      const ripple = document.createElement("span");
+      ripple.classList.add("ripple");
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+
+      this.appendChild(ripple);
+
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+  }
+
+  // Add focus effect to input
+  const input = document.querySelector(".input");
+  if (input) {
+    input.addEventListener("focus", function () {
+      this.parentElement.style.transform = "translateY(-5px)";
+    });
+
+    input.addEventListener("blur", function () {
+      this.parentElement.style.transform = "";
+    });
   }
 }

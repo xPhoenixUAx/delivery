@@ -1,30 +1,47 @@
-/* Скидання стилів */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Фіксований заголовок */
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6f42c1;
+  --text-color: #212529;
+  --light-text: #6c757d;
+  --background-color: #ffffff;
+  --header-height: 80px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Fixed header */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  transition: all 0.3s ease;
-  overflow: visible;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: var(--header-height);
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0 2rem;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  height: 100%;
 }
 
 .header-background {
@@ -33,137 +50,246 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 1.7);
-  /* backdrop-filter: blur(10px); */
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
   z-index: 1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Логотип */
+.header.scrolled .header-background {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: var(--text-color);
   font-weight: 600;
-  font-size: 1.4rem;
-  transition: all 0.3s ease;
+  font-size: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
 }
 
 .logo:hover {
-  transform: scale(1.05) rotate(5deg);
+  transform: scale(1.05);
 }
 
 .logo svg {
-  margin-right: 0.5rem;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  margin-right: 0.8rem;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  transition: all 0.4s ease;
 }
 
-/* Навігація */
+.logo:hover svg {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
+  transform: rotate(5deg);
+}
+
+.logo span {
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Navigation */
 .nav-menu ul {
   display: flex;
   list-style: none;
-}
-
-.nav-menu li {
-  margin: 0 1rem;
+  gap: 2rem;
 }
 
 .nav-link {
   text-decoration: none;
   color: var(--text-color);
   font-weight: 500;
-  padding: 5px 0;
+  padding: 0.5rem 0;
   transition: all 0.3s ease;
+  position: relative;
+  font-size: 1rem;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  transition: width 0.3s ease;
+  border-radius: 2px;
 }
 
 .nav-link:hover {
   color: var(--primary-color);
 }
 
-/* CTA Кнопка */
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* CTA Button */
 .cta-button {
   background: linear-gradient(
     45deg,
     var(--primary-color),
     var(--secondary-color)
   );
-  color: var(--background-color);
-  padding: 0.7rem 1.5rem;
+  color: white;
+  padding: 0.8rem 1.8rem;
   border-radius: 50px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 4px 15px rgba(13, 110, 253, 0.2);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2));
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+  z-index: -1;
 }
 
 .cta-button:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 8px rgba(79, 70, 229, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(13, 110, 253, 0.3);
 }
 
-/* Мобільна кнопка меню */
+.cta-button:hover::before {
+  transform: translateX(0);
+}
+
+/* Mobile menu button */
 .mobile-menu-btn {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 3;
 }
 
 .mobile-menu-btn span {
   display: block;
   width: 25px;
-  height: 3px;
+  height: 2px;
   background-color: var(--text-color);
   margin: 5px 0;
-  transition: 0.3s;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  border-radius: 2px;
 }
 
-/* Адаптивність */
-
-/* Планшети: екрани від 768px до 1200px */
+/* Responsive styles */
 @media (max-width: 1200px) {
   .header-container {
-    padding: 1rem 2rem;
+    padding: 0 1.5rem;
+  }
+
+  .nav-menu ul {
+    gap: 1.5rem;
   }
 }
 
-/* Мобільні пристрої: екрани менше 768px */
+@media (max-width: 992px) {
+  .nav-menu ul {
+    gap: 1rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .logo svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+  }
+
+  .cta-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .header {
+    height: 70px;
+  }
+
   .nav-menu {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 70px;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: none;
-    padding: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 1000;
   }
 
   .nav-menu.active {
-    display: block;
-    animation: slideDown 0.3s ease-out;
-  }
-
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    height: calc(100vh - 70px);
+    overflow-y: auto;
   }
 
   .nav-menu ul {
     flex-direction: column;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s ease;
+  }
+
+  .nav-menu.active ul {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .nav-menu li {
     margin: 1rem 0;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    display: block;
+    padding: 0.8rem 0;
   }
 
   .cta-button {
@@ -180,9 +306,58 @@
 
   .mobile-menu-btn.active span:nth-child(2) {
     opacity: 0;
+    transform: translateX(-20px);
   }
 
   .mobile-menu-btn.active span:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
   }
+}
+
+/* Animation for nav links */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-menu ul li {
+  animation: fadeInDown 0.5s ease forwards;
+  opacity: 0;
+  animation-delay: calc(var(--i) * 0.1s);
+}
+
+.nav-menu ul li:nth-child(1) {
+  --i: 1;
+}
+
+.nav-menu ul li:nth-child(2) {
+  --i: 2;
+}
+
+.nav-menu ul li:nth-child(3) {
+  --i: 3;
+}
+
+.nav-menu ul li:nth-child(4) {
+  --i: 4;
+}
+
+.nav-menu ul li:nth-child(5) {
+  --i: 5;
+}
+
+/* Active link style */
+.nav-link.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  width: 100%;
 }
